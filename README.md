@@ -335,7 +335,73 @@ as described by the tests:
 
 Using `pytest` will run the tests. After they are passing, sync your progress
 using Git. When your tests are all passing and your work is synced, the lab is
-complete!
+complete!Battleship Game: GROUP WORK
+In this assignment, you'll create a fantasy battle game in Python where a player-chosen character fights a dragon. The game will track character and dragon stats, prompt the user for a choice, and then simulate a battle to determine a winner.
+
+Task 1: Set Up the Game
+
+First, you'll need to set up the game file and the variables for all the characters and their stats.Open VS Code to the 1-Python-Fundamentals folder.Create a new file named battlegame.py.Inside this file, declare the following variables:
+Characters (as strings):
+wizard = "Wizard"
+elf = "Elf"
+human = "Human"
+Character HP (as integers):
+wizard_hp = 70
+elf_hp = 100
+human_hp = 150
+Character Damage (as integers):
+wizard_damage = 150
+elf_damage = 100
+human_damage = 20
+Dragon Stats (as integers):
+dragon_hp = 300
+dragon_damage = 50
+Task 2: Prompt Player Choice
+
+Next, you'll prompt the player to choose their character.Use print() statements to display the three character options to the player. For example:
+print("1) Wizard")
+print("2) Elf")
+print("3) Human")
+Use the input() function to ask the player to "Choose your character: " and store their choice in a variable named character_choice.
+character_choice = input("Choose your character: ")
+Test your code by running python battlegame.py in your terminal. The program should display the options and then prompt you for a choice before ending.
+
+
+
+Task 3: Handle Player Choice and Character Selection
+
+Now, you'll use a loop to process the player's choice and assign the corresponding stats.Wrap the code from Task 2 in an infinite while True: loop. This will ensure the program keeps prompting the user until a valid choice is made.Inside the loop, use an if/elif/else structure to check the value of character_choice.For each valid choice (e.g., '1', '2', '3'), assign the correct stats to a generic set of variables:
+If character_choice == '1':
+character = wizard
+my_hp = wizard_hp
+my_damage = wizard_damage
+break (This will exit the loop once a valid choice is made).
+Add similar elif blocks for the Elf ('2') and Human ('3').The else block should handle invalid input, printing a message like "Unknown character" and the loop will then restart.
+
+
+Task 4: Battle with the Dragon!
+
+This is the core of the game where the battle simulation happens.Begin a second while True: loop for the battle.Player's Turn:
+Subtract my_damage from dragon_hp.
+dragon_hp = dragon_hp - my_damage
+Print a message showing the damage dealt, for example: print(f"The {character} damaged the Dragon!")
+Check for Dragon's Defeat:
+Use an if statement to check if dragon_hp <= 0.
+If the condition is met, print "The Dragon has lost the battle!" and break the loop.
+Dragon's Turn:
+Subtract dragon_damage from my_hp.
+my_hp = my_hp - dragon_damage
+Print a message showing the damage received, for example: print(f"The Dragon damaged the {character}!")
+Check for Character's Defeat:
+Use an if statement to check if my_hp <= 0.
+If the condition is met, print "The", character, "has lost the battle!" and break the loop.
+Optional Challenges
+
+If you finish early, try implementing one or more of these features for extra practice:
+Case-Insensitive Character Name Input: Allow the player to type "wizard", "WIZARD", etc., and still have it recognized. You can achieve this by using the .lower() method on the user's input and comparing it to lowercase strings.
+Add a New Character: Introduce a new character, like a "Dwarf", with their own unique stats.
+Add an Exit Option: Allow the user to type "exit" to quit the game entirely.
+"Play Again" Prompt: After a battle ends, ask the player if they want to play another round and restart the game if they say "yes."
 
 ***
 
@@ -356,3 +422,7 @@ progress through this phase!
 - [Python Getting Started](https://www.w3schools.com/python/python_getstarted.asp)
 - [pipenv Documentation](https://pipenv.pypa.io/en/latest/)
 - [pytest Documentation](https://docs.pytest.org/en/7.1.x/)
+
+#Group work Battlegame
+
+
